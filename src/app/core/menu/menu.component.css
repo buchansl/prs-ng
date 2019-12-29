@@ -1,0 +1,39 @@
+#logo {
+display: inline-block
+
+
+  }
+nav {
+	width:100%;
+	background-color: #645f5f;
+	padding: 12px 0;
+
+}
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	display: inline-block;
+	text-align:center;
+}
+a {
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	font-family: Tahoma;
+}
+
+a:hover {
+	background-color: black;
+}
+img {
+	border-radius: 0%;
+  }
+  .img-responsive {
+    height: auto;
+    width: auto;
+    max-height: 7px;
+    max-width: 5px;
+}

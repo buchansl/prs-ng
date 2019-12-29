@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+<div class="component-content">
+        <section class="heading">
+            <span class='component-title'>Line Item edit</span>
+        </section>
+
+    <main class="single">
+        <table class="table table-sm">
+           
+          
+            <tr> 
+                <td>
+                    Product:
+                </td>
+               <td>
+                <select [(ngModel)]="lineItem.product" class="rounded" [compareWith]="compProduct">
+                        <option *ngFor='let p of products' [ngValue]='p'>{{p.name}}</option>  
+                </select>                                  
+
+               </td>
+                        
+            </tr>
+            <tr>
+                <td>
+                    Quantity:
+                </td>
+                <td>
+                    <input [(ngModel)]="lineItem.quantity" class="rounded" type="text">
+                </td>
+            </tr>
+           
+           
+           
+        </table>
+    </main>
+    <span><button (click)="update()" class="btn btn-sm btn-primary">Sae</button></span> 

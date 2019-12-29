@@ -1,0 +1,65 @@
+<app-menu></app-menu>
+
+<div class='component-content'>
+    <div class='lefthalf'>
+        <span class='component-title'>{{title}} </span>
+    </div>
+</div>
+<p *ngIf='!product'>Loading...</p>
+<div *ngIf='product'>
+    <main class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>
+                    Vendor:
+                </td>
+                <td>
+                    <input [(ngModel)]="product.vendor.name" class="rounded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Part Number:
+                </td>
+                <td>
+                    <input [(ngModel)]="product.partNumber" class="rounded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Name:
+                </td>
+                <td>
+                    <input [(ngModel)]="product.name" class="rounded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Price:
+                </td>
+                <td>
+                    <input [(ngModel)]="product.price" class="rounded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Unit:
+                </td>
+                <td>
+                    <input [(ngModel)]="product.unit" class="rounded" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    PhotoPath:
+                </td>
+                <td>
+                    <input [(ngModel)]="product.PhotoPath" class="rounded" type="text">
+                </td>
+            </tr>
+            
+        </table>
+    </main>
+    <span><a routerLink="/products/edit/{{product.id}}" class="btn btn-sm btn-warning">Edit</a></span>
+    <span> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
+</div>

@@ -1,0 +1,11 @@
+
+<nav>
+    <ul>
+         <div id="logo">
+            <img src="assets/logo_prs.jpg"  alt="prs" width='60' height='50' >
+        </div>
+        <li *ngFor="let mi of menuItems" title="{{mi.toolTip}}">
+            <a routerLink="{{mi.href}}">{{mi.display}}</a>
+        </li>
+    </ul>
+</nav>

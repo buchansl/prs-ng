@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+
+<div class='component-content' >
+        <div class='lefthalf' >
+            <span class='component-title' style='font-family: fantasy;'>{{title}}  </span>
+            <span><a routerLink='/lineitems/list'>
+                    <img id='createnew' width='20' height='20' src='assets/add-icon.png' title='Add New'></a>
+            </span>
+        </div>
+    </div>
+    <p *ngIf='!lineitems'>Loading...</p>
+    <table *ngIf='lineitems' class="table">
+        <tr>
+            <th><a (click)="sortBy('id')">ID</a></th>
+            <th><a (click)="sortBy('request')">Request</a></th>
+            <th><a (click)="sortBy('lineitems')">Lineitem</a></th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let l of lineitems | sort:sortCriteria:sortOrder">
+            <td>{{l.id}}</td>
+            <td>{{l.request}}</td>
+            <td>{{l.lineitems}} </td>
+            <td>
+                <a routerLink='/lineitems/detail/{{l.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+                 | 
+                <a routerLink='/lineitems/edit/{{l.id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+            </td>
+        </tr>
+    </table>

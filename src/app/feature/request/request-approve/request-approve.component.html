@@ -1,0 +1,86 @@
+<app-menu></app-menu>
+
+<div class='component-content'>
+    <div class='lefthalf'>
+        <span class='component-title' style='font-family: fantasy;'>{{title}} </span>
+        <span><a routerLink='/requests/lines/{id}'>
+            </a>
+        </span>
+    </div>
+</div>
+<p *ngIf='!request'>Loading...</p>
+<table *ngIf='request'>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Total</th>
+
+        </tr>
+
+        <tr>
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+
+        </tr>
+
+    </table>
+
+
+
+
+
+    <div class='component-content'>
+        <div class='lefthalf'>
+            <span class='component-title' style='font-family: fantasy;'>Line Items </span>
+
+
+        </div>
+    </div>
+    <p *ngIf='!lineItems'>Loading...</p>
+    <div *ngIf='lineItems'>
+
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+
+                <th>Quantity</th>
+                <th>Price</th> 
+                <th>Total</th>
+            </tr>
+            <tr *ngFor='let l of lineItems'>
+                <td>{{l.id}}</td>
+                <td>{{l.product.name}}</td>
+                <td>{{l.quantity}} </td>
+                <td>{{l.product.price | currency}} </td>
+                <td>{{l.quantity * l.product.price | currency}} </td>
+
+            </tr>
+            <tr >
+                <td><button (click)="approve()" class="btn-sm btn-primary">Approve</button></td>
+            </tr>
+            |
+            <tr >
+
+                <td><button (click)="reject()" class="btn-sm btn-primary">Reject</button></td>
+            </tr>
+
+
+
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
